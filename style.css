@@ -176,6 +176,7 @@ h6 {
 p {
   font-size: var(p);
   line-height: 2.4rem;
+  font-weight: 500;
 }
 .subh1 {
   font-size: var(--subh1);
@@ -197,7 +198,6 @@ p {
 .updates,
 .contact {
   padding: 10rem 0;
-  z-index: -1;
 }
 
 .homeBanner,
@@ -382,7 +382,7 @@ p {
 
 /* FOOTER */
 .footer {
-  padding: 4rem;
+  padding: 4rem 0;
   background-color: var(--clr-dark);
 }
 
@@ -406,6 +406,10 @@ p {
   font-size: 2rem;
 }
 
+.footer__socials ul li:hover {
+  transform: translateY(-0.5rem);
+}
+
 .footer__socials {
   gap: 3rem;
 }
@@ -420,6 +424,7 @@ p {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: end;
+  gap: 15rem;
 }
 
 .aboutBanner__wrapper--text {
@@ -441,6 +446,10 @@ p {
 .aboutBanner__wrapper ul a {
   color: var(--clr-primary);
   font-size: var(--h3);
+}
+
+.aboutBanner__wrapper ul i:hover {
+  opacity: 0.5;
 }
 
 #chevron {
@@ -646,6 +655,10 @@ p {
   gap: 2rem;
 }
 
+.contact__info ul:last-child li:hover {
+  opacity: 0.5;
+}
+
 .contact__info i {
   font-size: var(--h3);
   color: var(--clr-light);
@@ -668,10 +681,15 @@ textarea {
   padding: 2rem 3rem;
   background-color: var(--clr-light);
 }
+
 .input::placeholder {
   font-family: var(--font-style);
   font-weight: 500;
   opacity: 0.7;
+}
+
+.input:hover {
+  opacity: 0.9;
 }
 
 form a {
@@ -683,37 +701,107 @@ form a {
 }
 
 /* UPDATES */
-.updates {
+.updates__title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 10rem;
 }
 
-.updates__wrappper {
+.updates__title h2 {
+  color: var(--clr-primary);
+}
+.updates__title h3 {
+  font-weight: 500;
+}
 
+.updates__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem;
 }
 
 .updates__left {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto;
   gap: 3rem;
 }
 
-.updates__left--card {
+.updates__card {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}
-.updates__left--card ul {
-  display: flex;
-  column-gap: 5rem;
+  gap: 3rem;
+  padding-bottom: 7.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #00000020;
 }
 
-.updates__left--card ul i{
+.updates__card:last-child{
+  border: none;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+
+.updates__card ul {
+  display: flex;
+  column-gap: 5rem;
+  margin-top: -1rem;
+  font-size: var(--h5);
+}
+
+.updates__card ul i{
   margin-right: 1rem;
 }
 
-.updates___wrapper--right {
+.updates__card h3, .updates__card a{
+  color: var(--clr-primary);
+}
+
+.updates__right {
+  display: grid;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.updates__categories, .updates__post {
+  border-bottom: 1px solid #00000020;
+  padding-bottom: 5.6rem;
+}
+
+.updates__right h3 {
+  margin-bottom: 4rem;
+  color: var(--clr-primary);
+}
+.updates__categories ul li {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 2rem 0;
+}
+
+.updates__categories ul li small {
+  justify-self: end;
 
 }
 
+.updates__postCard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  margin: 3.5rem 0;
+}
+
+.updates__postCard--text {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+}
+
+.updates__tags div {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
 
 
 /* ASSETS */
@@ -721,7 +809,7 @@ form a {
   background-color: transparent;
   border: transparent;
   border-radius: 10rem;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
   color: transparent;
   text-align: center;
 }
@@ -749,6 +837,17 @@ form a {
   color: var(--clr-dark);
 }
 
+.btn.bg-light {
+  color: var(--clr-dark);
+  font-weight: 500;
+  border: 3px solid var(--clr-dark);
+}
+
+.btn.bg-light:hover {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -758,7 +857,7 @@ form a {
   position: relative;
 }
 
-.card img {
+/* .card img {
   height: 50%;
 }
 
@@ -769,10 +868,26 @@ form a {
   object-fit: cover;
   border-radius: 2rem;
   transition: 300ms ease-in-out;
-  /* transform: rotate(5deg); */
+} */
+
+.card img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 2rem;
+
+}
+
+.card img:hover {
+  height: 50%;
+  position: absolute;
+  transition: 300ms ease-in-out;
 }
 
 .card--text {
+  height: 50%;
+  padding-top: 60%;
   display: flex;
   flex-direction: column;
   gap: 3rem;
