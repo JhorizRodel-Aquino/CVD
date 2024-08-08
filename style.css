@@ -222,10 +222,6 @@ p {
   height: 6rem;
 }
 
-/* #visual {
-  color: var(--clr-primary);
-} */
-
 .header__wrapper {
   display: flex;
   justify-content: space-between;
