@@ -249,6 +249,76 @@ p {
   font-weight: 300;
 }
 
+/* MOBILE RESPONSIVE | HEADER */
+.toggle__menu {
+  display: none;
+}
+
+.toggle__menu span {
+  background-color: var(--clr-light);
+  width: 3rem;
+  height: 0.4rem;
+  display: block;
+  border: 3px solid var(--clr-light);
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 520px) {
+  .toggle__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--clr-dark);
+    flex-direction: column;
+    text-align: center;
+    right: -100%;
+    transform: translateY(-20rem);
+    margin-top: 30rem;
+    z-index: 9999;
+    transition: all 0.5 ease;
+    justify-content: center;
+  }
+
+  .header__nav.open {
+    right: 0;
+    transition: all 0.5 ease;
+  }
+
+  .toggle__menu.open span:first-child {
+    transform: translate(0, 10px) rotate(225deg);
+    transition: all 0.5 ease;
+  }
+
+  .toggle__menu.open span:nth-child(2) {
+    opacity: 0;
+    transition: all 0.5 ease;
+  }
+  .toggle__menu.open span:last-child {
+    transform: translate(0, -7px) rotate(-225deg);
+    transition: all 0.5 ease;
+  }
+
+  .header__branding {
+    gap: 1.5rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+    background-color: red;
+  }
+
+}
+
 /* HOME BANNER */
 .homeBanner__wrapper {
   display: grid;
@@ -266,6 +336,18 @@ p {
 
 .homeBanner__text p {
   text-align: justify;
+}
+
+/*  */
+@media screen and (max-width: 520px) {
+  .homeBanner__wrapper {
+  grid-template-columns: auto;
+  }
+
+  .homeBanner img {
+    display: none;
+  }
+  
 }
 
 /* HOME SERVICES */
@@ -307,6 +389,19 @@ p {
   font-size: 7rem;
 }
 
+/* MOBILE RESPONSIVE | HOME SERVICES */
+@media screen and (max-width: 520px) {
+  .homeServices__wrapper {
+    grid-template-columns: auto;
+    gap: 10rem;
+  }
+
+  .homeServices__card,
+  .homeServices__card--text {
+    gap: 3rem;
+  }
+}
+
 /* HOME ABOUT */
 .homeAbout__wrapper {
   display: grid;
@@ -342,6 +437,26 @@ p {
   color: var(--clr-primary);
 }
 
+/*  */
+@media screen and (max-width: 520px) {
+  .homeAbout__wrapper {
+    grid-template-columns: auto;
+    gap: 3rem;
+  }
+
+  .homeAbout--profile img:last-child {
+    width: 100%;
+    height: 38rem;
+    position: absolute;
+    left: 0rem;
+    opacity: 0.5;
+  }
+
+  .homeAbout--text {
+    gap: 2rem;
+  }
+}
+
 /* HOME TRENDS */
 .homeTrends {
   background-color: var(--clr-dark);
@@ -361,11 +476,18 @@ p {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   margin-top: 5rem;
+  justify-items: center;
+}
+
+@media screen and (max-width: 520px) {
+  .homeTrends__wrapper {
+    grid-template-columns: auto;
+  }
 }
 
 /* CTA */
 .CTA {
-  padding: 8rem;
+  padding: 8rem 0;
   background-color: var(--clr-primary);
 }
 .CTA__wrapper {
@@ -736,7 +858,7 @@ form a {
   border-bottom: 1px solid #00000020;
 }
 
-.updates__card:last-child{
+.updates__card:last-child {
   border: none;
   padding-bottom: 0rem;
   margin-bottom: 0rem;
@@ -749,11 +871,12 @@ form a {
   font-size: var(--h5);
 }
 
-.updates__card ul i{
+.updates__card ul i {
   margin-right: 1rem;
 }
 
-.updates__card h3, .updates__card a{
+.updates__card h3,
+.updates__card a {
   color: var(--clr-primary);
 }
 
@@ -763,7 +886,8 @@ form a {
   align-items: center;
 }
 
-.updates__categories, .updates__post {
+.updates__categories,
+.updates__post {
   border-bottom: 1px solid #00000020;
   padding-bottom: 5.6rem;
 }
@@ -780,7 +904,6 @@ form a {
 
 .updates__categories ul li small {
   justify-self: end;
-
 }
 
 .updates__postCard {
@@ -802,7 +925,6 @@ form a {
   column-gap: 1.5rem;
   row-gap: 2rem;
 }
-
 
 /* ASSETS */
 .btn {
@@ -857,26 +979,12 @@ form a {
   position: relative;
 }
 
-/* .card img {
-  height: 50%;
-}
-
-.card img:hover {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  object-fit: cover;
-  border-radius: 2rem;
-  transition: 300ms ease-in-out;
-} */
-
 .card img {
   height: 100%;
   width: 100%;
   position: absolute;
   object-fit: cover;
   border-radius: 2rem;
-
 }
 
 .card img:hover {
@@ -897,4 +1005,16 @@ form a {
 .card--text h4,
 .card--text a {
   color: var(--clr-primary);
+}
+
+@media screen and (max-width: 520px) {
+
+  .card--text {
+    padding-top: 0;
+  }
+
+  .card img {
+  height: 50%;
+  position: relative;
+  }
 }
