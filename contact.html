@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="header contact__header">
+    <header class="header">
       <div class="container">
         <div class="header__wrapper">
           <div class="header__branding">
@@ -30,6 +30,11 @@
             <li><a href="updates.html">Updates</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
+          <div class="toggle__menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </header>
@@ -39,7 +44,10 @@
         <h2>Contact</h2>
         <div class="contact__wrapper">
           <div class="contact__text">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam iure quis facere. Sunt, totam! Quae.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
+              iure quis facere. Sunt, totam! Quae.
+            </p>
             <div class="contact__info">
               <ul>
                 <li>
@@ -52,28 +60,43 @@
                 </li>
                 <li>
                   <i class="fa-solid fa-map-pin"></i>
-                  <p>Baloc road, Brrgy San Ignacio San Pablo City Laguna Philippines 4000</p>
+                  <p>
+                    Baloc road, Brrgy San Ignacio San Pablo City Laguna
+                    Philippines 4000
+                  </p>
                 </li>
               </ul>
 
               <ul>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                <li>
+                  <a href=""><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </li>
               </ul>
             </div>
           </div>
           <form action="">
-              <input type="text" placeholder="NAME" class="input">
-              <input type="email" placeholder="EMAIL" class="input">
-              <textarea name="" id="" placeholder="MESSAGE" class="input"></textarea>
-              <a href="" class="btn bg-primary">SEND MESSAGE</a>
+            <input type="text" placeholder="NAME" class="input" />
+            <input type="email" placeholder="EMAIL" class="input" />
+            <textarea
+              name=""
+              id=""
+              placeholder="MESSAGE"
+              class="input"
+            ></textarea>
+            <a href="" class="btn bg-primary">SEND MESSAGE</a>
           </form>
         </div>
       </div>
     </section>
-
 
     <footer class="footer">
       <div class="container">
@@ -102,5 +125,8 @@
         </div>
       </div>
     </footer>
+    <!-- SCRIPT -->
+    <script src="./js/toggle__menu.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </body>
 </html>
